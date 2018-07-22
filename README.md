@@ -1,6 +1,6 @@
 # rollup-plugin-sass-variables
 
-###Rollup plugin for loading sass/scss variables as javascript object
+### Rollup plugin for loading sass/scss variables as javascript object
 
 <a href="LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="Software License" />
