@@ -5,7 +5,7 @@ var fs = require('fs'),
 export default function () {
   return {
     resolveId: function (importee, importer) {
-      if (importee.indexOf('variable!') === 0) {
+      if (importee.indexOf('variables!') === 0) {
         var name = importee.split('!')[1],
           target = path.resolve(path.dirname(importer), name);
 
@@ -22,7 +22,7 @@ export default function () {
       var variables = parse(code, parse(code))
 
       return {
-        code: variables,
+        code: `export default ${JSON.stringify(variables)}`,
         map: {mappings: ''}
       };
     }

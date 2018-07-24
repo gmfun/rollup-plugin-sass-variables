@@ -40,5 +40,5 @@ export default {
 Import `.scss` or `.sass` file like the following
 
 ```js
-import variables from 'variable!../../styles/colors.scss'
+import variables from 'variables!../../styles/colors.scss'
 ```
