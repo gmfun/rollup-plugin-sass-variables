@@ -5,8 +5,9 @@ var fs = require('fs'),
 export default function () {
   return {
     resolveId: function (importee, importer) {
-      if (importee.indexOf('variables!') === 0) {
-        var name = importee.split('!')[1],
+      if (importee.indexOf('sass-variable-loader') >= 0 || importee.indexOf('variables') >= 0) {
+        const importeeArray = importee.split('!');
+        var name = importeeArray[importeeArray.length - 1],
           target = path.resolve(path.dirname(importer), name);
 
         paths.set(target, name)
