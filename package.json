@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-sass-variables",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "load sass/scss variables as javascript object",
   "main": "dist/rollup-plugin-sass-variables.cjs.js",
   "module": "dist/rollup-plugin-sass-variables.es.js",
@@ -9,6 +9,7 @@
     "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean && rollup -c",
+    "build:watch": "npm run clean && rollup -c -w",
     "prepublishOnly": "npm run build"
   },
   "author": "gmfun",
