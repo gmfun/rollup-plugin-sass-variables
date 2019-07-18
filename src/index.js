@@ -7,8 +7,15 @@ export default function () {
     resolveId: function (importee, importer) {
       if (importee.indexOf('sass-variable-loader') >= 0 || importee.indexOf('variables') >= 0) {
         const importeeArray = importee.split('!');
-        var name = importeeArray[importeeArray.length - 1],
+        var name = importeeArray[importeeArray.length - 1];
+        var target
+
+        if (name.startsWith('.')) {
           target = path.resolve(path.dirname(importer), name);
+        } else {
+          var nodeModulesPath = __dirname.replace(/(.+node_modules)(.+)/, '$1')
+          target = path.resolve(path.join(nodeModulesPath, name))
+        }
 
         paths.set(target, name)
         return target
